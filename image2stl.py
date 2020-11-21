@@ -44,9 +44,9 @@ faces=[]
 for i in range(0, np.shape(vertices)[0]):
     vertice = vertices[i]
     #print(vertice)
-    vertice1 = (vertice[0],vertice[1],  vertice[2])
+    vertice3 = (vertice[0],vertice[1],  vertice[2])
     vertice2 = (vertice[0]+1,vertice[1],vertice[2])
-    vertice3 = (vertice[0],vertice[1]+1,vertice[2])
+    vertice1 = (vertice[0],vertice[1]+1,vertice[2])
     face1 = np.array([vertice1,vertice2,vertice3])
     #print(face1)
     faces.append(face1)
@@ -65,16 +65,16 @@ for i in range(0, np.shape(vertices)[0]):
    #print(face1)
     faces.append(face3)
     
-    vertice1 = (vertice[0]+1,vertice[1]+1,vertice[2]+z)
+    vertice3 = (vertice[0]+1,vertice[1]+1,vertice[2]+z)
     vertice2 = (vertice[0]+1,vertice[1],  vertice[2]+z)
-    vertice3 = (vertice[0],vertice[1]+1,  vertice[2]+z)
+    vertice1 = (vertice[0],vertice[1]+1,  vertice[2]+z)
     face4 = np.array([vertice1,vertice2,vertice3])
     faces.append(face4)
     
     if vertice[3]==1:
-        vertice1=(vertice[0]+1,vertice[1]+1,vertice[2])
+        vertice3=(vertice[0]+1,vertice[1]+1,vertice[2])
         vertice2=(vertice[0]+1,vertice[1],vertice[2])
-        vertice3=(vertice[0]+1,vertice[1]+1,vertice[2]+z)
+        vertice1=(vertice[0]+1,vertice[1]+1,vertice[2]+z)
         faceu = np.array([vertice1,vertice2,vertice3])
         faces.append(faceu)
        
@@ -85,9 +85,9 @@ for i in range(0, np.shape(vertices)[0]):
         faces.append(faceu)
   
     if vertice[4]==1:
-        vertice1=(vertice[0],vertice[1]+1,vertice[2])
+        vertice3=(vertice[0],vertice[1]+1,vertice[2])
         vertice2=(vertice[0]+1,vertice[1]+1,vertice[2])
-        vertice3=(vertice[0],vertice[1]+1,vertice[2]+z)
+        vertice1=(vertice[0],vertice[1]+1,vertice[2]+z)
         faceu = np.array([vertice1,vertice2,vertice3])
         faces.append(faceu)
         
@@ -98,9 +98,9 @@ for i in range(0, np.shape(vertices)[0]):
         faces.append(faceu)     
      
     if vertice[5]==1:
-        vertice1=(vertice[0],vertice[1],vertice[2])
+        vertice3=(vertice[0],vertice[1],vertice[2])
         vertice2=(vertice[0],vertice[1]+1,vertice[2])
-        vertice3=(vertice[0],vertice[1]+1,vertice[2]+z)
+        vertice1=(vertice[0],vertice[1]+1,vertice[2]+z)
         faceu = np.array([vertice1,vertice2,vertice3])
         faces.append(faceu)
         
@@ -111,9 +111,15 @@ for i in range(0, np.shape(vertices)[0]):
         faces.append(faceu)
         
     if vertice[6]==1:
-        vertice1=(vertice[0],vertice[1],vertice[2]+z)
+        vertice1=(vertice[0],vertice[1],vertice[2])
+        vertice2=(vertice[0]+1,vertice[1],vertice[2])
+        vertice3=(vertice[0],vertice[1],vertice[2]+z)
+        faceu = np.array([vertice1,vertice2,vertice3])
+        faces.append(faceu)
+        
+        vertice3=(vertice[0],vertice[1],vertice[2]+z)
         vertice2=(vertice[0]+1,vertice[1],vertice[2]+z)
-        vertice3=(vertice[0]+1,vertice[1],vertice[2])
+        vertice1=(vertice[0]+1,vertice[1],vertice[2])
         faceu = np.array([vertice1,vertice2,vertice3])
         faces.append(faceu)  
    
