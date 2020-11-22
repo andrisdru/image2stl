@@ -10,17 +10,16 @@ parser.add_argument("-s", "--scale", type=float, default=1, help="Scale, Size * 
 parser.add_argument("-o", "--output", type=str, default='output.stl', help="output STL")
 parser.add_argument("-x", "--maxx", type=int, default=1440, help="Max X vertices")
 parser.add_argument("-y", "--maxy", type=int, default=2560, help="Max Y vertices")
-parser.add_argument("-c", "--color", type=int, default=255, help="Max Y vertices")
+parser.add_argument("-c", "--color", type=int, default=255, help="Color threshold, image is converted to greyscale where 0 white 255 black")
 requiredNamed = parser.add_argument_group('required named arguments')
 requiredNamed.add_argument("-i", "--input",required=True ,type=str, help="Input png, jpg, gif...")
-
 args = parser.parse_args()
-#------------------------inputs---------------
+z=10 #height # set default height
 img = Image.open(args.input)
 max_size=(args.maxx,args.maxy)
 color=args.color #0 white / 255 black
-z=10 #height
-#-----------------------------------------------
+
+
 grey_img = img.convert('L') #convert to 8bit (0-255) greyscale
 grey_img.thumbnail(max_size)
 imageNp = np.array(grey_img)
