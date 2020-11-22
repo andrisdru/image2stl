@@ -1,6 +1,6 @@
-# image2stl
+# image2stl image to STL converter for DLP printer PCB designing
 
-Image to STL converter for DLP pcb designing. In general this script converts PNG or other image to STL file, by defaul white color is converted as empty space.
+In general this script converts PNG or other image to STL file, by defaul white color is converted as empty space.
 
 1. Install python3 and its dependencies "pip3 install numpy-stl pillow argparse"
 1. Export from easyeda PNG image with 2.5x size
