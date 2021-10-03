@@ -35,6 +35,7 @@ def colored(pixel):
     return False
 
 
+
 # setting offset basically making lines thinner 
 for i in range(offset):
   for x in range(1, ncols-1):
@@ -65,7 +66,8 @@ for i in range(offset):
         if colored(imageNp[y][x+1]) and not colored(imageNp[y][x-1]): 
           imageNp[y][x] = 255
 
-
+PIL_image = Image.fromarray(np.uint8(imageNp)).convert('L')
+PIL_image.save('img.png')
 
 vertices=[]
 
