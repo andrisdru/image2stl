@@ -35,9 +35,6 @@ def colored(pixel):
     return False
 
 
-PIL_image = Image.fromarray(np.uint8(imageNp)).convert('L')
-PIL_image.save('img1.png')
-
 # setting offset basically making lines thinner 
 for i in range(offset):
   for x in range(1, ncols-1):
